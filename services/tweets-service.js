@@ -20,9 +20,7 @@ module.exports = (app) => {
 
     const deleteTweet = (req, res) => {
         const id = parseInt(req.params['id']);
-        console.log(id);
         tweets = tweets.filter(tweet => tweet._id !== id);
-        console.log(tweets);
         res.sendStatus(200);
     }
     app.delete('/api/tweets/:id', deleteTweet);

@@ -1,0 +1,13 @@
+{
+  "name": "Shelly Brawl",
+  "totalTweets": 22,
+  "backImage": "/images/brawlstars3.png",
+  "frontImage": "/images/shelly.png",
+  "handle": "@shelly",
+  "bio": "Shelly is a Common Brawler that is unlocked upon beginning the game. She has moderate health and damage output. Her shotgun deals more damage the closer she is to her target, making her excellent for short combat.",
+  "location": "Star Park, Brawl",
+  "birthDate": "1997-12-10",
+  "dateJoined": "April 2018",
+  "following": 123,
+  "followers": 768
+}
