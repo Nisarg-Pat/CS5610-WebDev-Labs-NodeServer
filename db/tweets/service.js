@@ -8,6 +8,7 @@ module.exports = (app) => {
     }
 
     const createTweet = (req, res) => {
+        console.log(req.body)
         dao.createTweet(req.body)
             .then((tweet) => res.json(tweet));
     }
@@ -17,8 +18,18 @@ module.exports = (app) => {
     }
 
     const likeTweet = (req, res) => {
-        dao.updateTweet(req.params.id, {liked: req.params.like})
-            .then((status) => res.send(status));
+        const id = req.params.id;
+        dao.findOneTweet(id).then((tweet) => {
+            if (tweet.liked === true) {
+                tweet.liked = false;
+                tweet.like--;
+            } else {
+                tweet.liked = true;
+                tweet.like++;
+            }
+            dao.updateTweet(req.params.id, tweet)
+                .then((status) => res.send(status));
+        })
     }
 
     app.put('/rest/tweets/:id/like', likeTweet);
