@@ -8,7 +8,6 @@ module.exports = (app) => {
     }
 
     const createTweet = (req, res) => {
-        console.log(req.body)
         dao.createTweet(req.body)
             .then((tweet) => res.json(tweet));
     }
