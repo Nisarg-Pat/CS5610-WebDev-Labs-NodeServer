@@ -29,5 +29,6 @@ require("./services/profile-service")(app);
 require('./db/movies/service')(app);
 require('./db/tweets/service')(app);
 require('./db/profile/profile-service')(app);
+require('./db/who/who-service')(app);
 
 app.listen(process.env.PORT || 4000);
